@@ -1,4 +1,13 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slide-top-animation {
+  -webkit-animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+/* :root {
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
@@ -104,4 +113,4 @@ a {
   html {
     color-scheme: dark;
   }
-}
+} */
