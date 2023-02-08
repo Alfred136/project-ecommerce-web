@@ -44,7 +44,7 @@ const Navbar = () => {
   const trailingIconClass = `ml-4 ${iconClass}`
 
   return (
-    <div className='absolute top-0 z-10 w-full text-[12px]'>
+    <div className='fixed top-0 z-10 w-full bg-white text-[12px]'>
       <div className='flex items-center justify-between px-6 py-2 shadow-lg'>
         <div className='flex flex-1'>
           <div className='md:flex hidden'>

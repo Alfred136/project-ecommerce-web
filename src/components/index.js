@@ -5,6 +5,7 @@ import HeroBanner from './HeroBanner'
 import CategoryBanner from './CategoryBanner'
 import Product from './Product'
 import Cart from './Cart'
+import Button from './Button'
 
 export {
   Layout,
@@ -13,5 +14,6 @@ export {
   HeroBanner,
   CategoryBanner,
   Product,
-  Cart
+  Cart,
+  Button
 }

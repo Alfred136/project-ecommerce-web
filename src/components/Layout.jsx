@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       <header>
         <Navbar />
       </header>
-      <main className="pt-[55px]">
+      <main className='mt-[52px]'>
         {children}
       </main>
       <footer>
