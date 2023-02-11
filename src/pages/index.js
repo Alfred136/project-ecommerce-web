@@ -1,15 +1,21 @@
 import React from 'react'
-import { HeroBanner, CategoryBanner } from '@/components'
+import { HeroBanner, CategoryBanner, ProductsCarousel } from '@/components'
+import { newArrivals, featureProducts } from '@/constant'
 
 const Home = () => {
   return (
-    <div>
+    <div className='overflow-hidden'>
       <HeroBanner />
-      <div className='max-w-[1400px] m-auto bg-yellow-100'>
-        Main content
-      </div>
+      <ProductsCarousel
+        title='New Arrivals'
+        products={newArrivals}
+      />
+      <ProductsCarousel
+        title='Featured Products'
+        products={featureProducts}
+      />
       <CategoryBanner />
-    </div>
+    </div >
   )
 }
 

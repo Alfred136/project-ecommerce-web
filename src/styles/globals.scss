@@ -1,3 +1,8 @@
+@import 'bootstrap/scss/_functions.scss';
+@import 'bootstrap/scss/_variables.scss';
+@import 'bootstrap/scss/_mixins.scss';
+@import 'bootstrap/scss/_carousel.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +15,67 @@
 .hero-banner {
   background-image: url('../../public/jeans-banner.jpg');
   background-size: cover;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.line__1 {
+  max-lines: 1;
+}
+
+.truncate {
+  overflow: hidden;
+  text-overflow: clip;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+          line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+/* Products */
+.card-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.card-image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  object-fit: fill;
+  cursor: pointer;
+}
+
+.overlay {
+  /* transition: .3s ease; */
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+}
+
+.card-container:hover .card-image {
+  object-fit: none;
+  /* opacity: 0.3; */
+}
+
+.card-container:hover .overlay {
+  opacity: 1;
+}
+
+.gray-layer {
+  background-color: rgba(22, 27, 27, 0.8);
 }
 
 /* :root {

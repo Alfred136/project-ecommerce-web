@@ -3,35 +3,6 @@ import Link from 'next/link'
 import { Button } from '@/components'
 import { footerLinks, socialMedias } from '@/constant'
 
-// const Signup = ({ input, setInput, onSubmit }) =>
-// //{
-// // const onSubmit = () => {
-// //   window.alert('Todo: implement notification via global state.')
-// //   setInput('')
-// // }
-
-// //return 
-// (
-//   <div className='flex flex-col mb-6'>
-//     <p>Sign up for latest news</p>
-//     <input
-//       type='text'
-//       value={input}
-//       placeholder='Email address...'
-//       className='text-black'
-//       onChange={(event) => setInput(event.target.value)}
-//     />
-//     <div onClick={onSubmit}>
-//       <Button
-//         title='Submit'
-//         theme='secondary-outline'
-//         styles=''
-//       />
-//     </div>
-//   </div>
-// )
-// //}
-
 const SignupForm = () => {
   const [inputEmail, setInputEmail] = useState('')
 
@@ -49,7 +20,7 @@ const SignupForm = () => {
         type='text'
         value={inputEmail}
         placeholder='Email address...'
-        className='text-black p-2 mb-3'
+        className='text-black p-2 mb-3 focus:outline-none'
         onChange={(event) => setInputEmail(event.target.value)}
       />
       <Button
@@ -100,7 +71,6 @@ const Footer = () => (
     <div className='max-w-[1400px] m-auto px-8 py-10 bg-skate-700'>
       <div className='w-full flex md:flex-row flex-col'>
         <div className='flex-1 flex flex-col'>
-          {/* <Signup input={inputEmail} setInput={setInputEmail} /> */}
           <SignupForm />
           <SocialMedias />
         </div>

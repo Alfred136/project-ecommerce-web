@@ -4,7 +4,7 @@ import { Button } from '@/components'
 
 const HeroBanner = () => {
   return (
-    <div className='w-full h-[95vh] hero-banner'>
+    <div className='w-full h-[95vh] mb-[50px] hero-banner'>
       <div className='absolute bottom-[10%] left-[10%]'>
         <div className='flex flex-col'>
           <p className='text-[32px] text-gray-50 font-bold mb-4'>

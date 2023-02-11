@@ -6,6 +6,10 @@ const themes = [
     class: 'bg-slate-700 border-slate-700 text-gray-50 hover:bg-gray-50 hover:text-slate-700'
   },
   {
+    theme: 'primary-outline',
+    class: 'border-slate-700 text-slate-700 hover:bg-slate-900 hover:border-slate-900 hover:text-gray-50'
+  },
+  {
     theme: 'secondary',
     class: 'bg-gray-50 border-gray-50 text-slate-700 hover:bg-slate-700 hover:text-gray-50 hover:border-slate-700'
   },
@@ -27,7 +31,7 @@ const Button = ({
     <button
       type='button'
       onClick={onClick}
-      className={`w-[180px] py-3 border-[1.5px] rounded-sm text-center font-semibold ${themeClass} ${styles}`}>
+      className={`w-[180px] py-3 border-[1.5px] rounded-sm text-center font-semibold transition-all duration-300 ${themeClass} ${styles}`}>
       {title}
     </button>
   )
