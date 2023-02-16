@@ -2,10 +2,24 @@
 @import 'bootstrap/scss/_variables.scss';
 @import 'bootstrap/scss/_mixins.scss';
 @import 'bootstrap/scss/_carousel.scss';
+@import 'bootstrap/scss/_spinners.scss';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
 
 .slide-top-animation {
   -webkit-animation: slide-top 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -26,18 +40,14 @@
   display: none;
 }
 
-.line__1 {
-  max-lines: 1;
-}
-
-.truncate {
-  overflow: hidden;
-  text-overflow: clip;
-  display: -webkit-box;
-  -webkit-line-clamp: 1; /* number of lines to show */
-          line-clamp: 1;
-  -webkit-box-orient: vertical;
-}
+// .truncate {
+//   overflow: hidden;
+//   text-overflow: clip;
+//   display: -webkit-box;
+//   -webkit-line-clamp: 1; /* number of lines to show */
+//           line-clamp: 1;
+//   -webkit-box-orient: vertical;
+// }
 
 /* Products */
 .card-container {

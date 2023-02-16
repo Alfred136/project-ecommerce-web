@@ -1,6 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
-import { Button } from '@/components'
+import Link from 'next/link';
+import { Button } from '@/components';
 
 const HeroBanner = () => {
   return (
@@ -11,10 +10,10 @@ const HeroBanner = () => {
             Spring '23 New Arrivals
           </p>
           <div className='flex sm:flex-row flex-col gap-4'>
-            <Link href='/product/men'>
+            <Link href='/products/men'>
               <Button title='Shop Men' theme='secondary' />
             </Link>
-            <Link href='/product/women'>
+            <Link href='/products/women'>
               <Button title='Shop Women' theme='secondary' />
             </Link>
           </div>
@@ -22,6 +21,6 @@ const HeroBanner = () => {
       </div>
     </div>
   )
-}
+};
 
-export default HeroBanner
+export default HeroBanner;

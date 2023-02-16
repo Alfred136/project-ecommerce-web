@@ -1,7 +1,5 @@
-import React from 'react'
-import { navTabsLeading } from '@/constant'
-import Link from 'next/link'
-// const 
+import { navTabsLeading } from '@/constant';
+import Link from 'next/link';
 
 const CategoryBanner = () => (
   <div className='full'>
@@ -17,6 +15,6 @@ const CategoryBanner = () => (
       </div>
     ))}
   </div>
-)
+);
 
-export default CategoryBanner
+export default CategoryBanner;

@@ -149,7 +149,46 @@ export const menSizes = [28, 29, 30, 31, 32, 33, 34, 35]
 
 export const womenSizes = [24, 25, 26, 27, 28, 29, 30, 31]
 
+//use this
+export const allSizes = [
+  {
+    id: 'men',
+    options: [28, 29, 30, 31, 32, 33, 34, 35]
+  },
+  {
+    id: 'women',
+    options: [24, 25, 26, 27, 28, 29, 30, 31]
+  },
+]
+//use this
+export const categories = [
+  {
+    id: 'men',
+    name: "Men's collection"
+  },
+  {
+    id: 'women',
+    name: "Women's collection"
+  },
+  {
+    id: 'new',
+    name: 'New Arrivals'
+  },
+  {
+    id: 'sale',
+    name: 'Products on Sale'
+  },
+  // {
+  //   id: 'featured',
+  //   name: 'Featured Products'
+  // },
+]
+
 export const collections = [
+  {
+    id: 'all',
+    name: 'All'
+  },
   {
     id: 'collection-1',
     name: 'Collection 1'
@@ -183,7 +222,7 @@ export const tags = [
   },
 ]
 
-export const sortBy = [
+export const sorts = [
   {
     id: 'price-asc',
     name: 'Price, low to high',
@@ -322,6 +361,7 @@ export const products = [
     ]
   }
 ]
+//Products End
 
 export const footerLinks = [
   {

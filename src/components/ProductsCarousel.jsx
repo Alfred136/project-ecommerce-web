@@ -1,34 +1,38 @@
-import Link from 'next/link'
 import React, { useEffect, useRef } from 'react'
 import { ProductCard } from '.'
 
 const ProductsCarousel = ({ title, products }) => {
   const ref = useRef();
   let isDragStart = false;
-  let canClickItems = true;
-  let prevPageX, prevScrollLeft;
+  let prevPageX, prevScrollLeft, clientXonMouseDown, clientYonMouseDown;
 
   const dragStart = (e) => {
     isDragStart = true;
     prevPageX = e.pageX;
     prevScrollLeft = ref.current.scrollLeft;
+    clientXonMouseDown = e.clientX;
+    clientYonMouseDown = e.clientY;
   }
 
   const dragEnd = (e) => {
     e.preventDefault();
-    ref.current.scrollLeft *= 1.1
     isDragStart = false;
-    canClickItems = true;
   }
 
   const dragDragging = (e) => {
     if (!isDragStart) return;
     e.preventDefault()
-    if (canClickItems) {
-      canClickItems = false;
-    }
     let positionDiff = e.pageX - prevPageX;
     ref.current.scrollLeft = prevScrollLeft - positionDiff;
+  }
+
+  const dragClick = (e) => {
+    e.stopPropagation()
+    // prevent link click if the element was dragged
+    if (clientXonMouseDown !== e.clientX ||
+      clientYonMouseDown !== e.clientY) {
+      e.preventDefault()
+    }
   }
 
   useEffect(() => {
@@ -36,6 +40,7 @@ const ProductsCarousel = ({ title, products }) => {
     ref.current.addEventListener('mousemove', dragDragging)
     ref.current.addEventListener('mouseup', dragEnd)
     ref.current.addEventListener('mouseleave', dragEnd)
+    ref.current.addEventListener('click', dragClick)
   })
 
   return (
@@ -45,14 +50,14 @@ const ProductsCarousel = ({ title, products }) => {
       </p>
 
       <div ref={ref} className='w-[100vw] overflow-scroll scrollbar-hide'>
-        <div id='carousel' className='max-w-[1400px] m-auto sm:px-10 px-4'>
-          <div className='w-[200vw] pb-10 cursor-grab'>
+        <div className='max-w-[1400px] m-auto sm:px-10 px-4'>
+          <div className='w-fit pb-10 sm:pr-[60px] pr-[32px] cursor-grab'>
             <div className='flex gap-8 translate-x-0'>
-              {products.map((product) => (
-                // <Link key={product.id} href={canClickItems ? `/product/${product.id}` : ''}>
-                <Link key={product.id} href={''}>
-                  <ProductCard product={product} />
-                </Link>
+              {products?.map((product) => (
+                <ProductCard
+                  key={product._id}
+                  product={product}
+                />
               ))}
             </div>
           </div>
