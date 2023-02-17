@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { categories } from '@/constant';
-import { Loading } from '@/components';
+import { Loading, Error } from '@/components';
 import {
   getProducts,
   useGetProducts,
@@ -15,18 +15,26 @@ import {
 
 const Products = () => {
   const { category, categoryTitle } = useCategory();
-  const { data: products, isSuccess, isLoading, isError } = useGetProducts({ category });
+  const { data: products, isSuccess, isLoading, isError, error } = useGetProducts({ category });
 
   const filteredProducts = isSuccess
     ? useFilteredProducts(products)
     : []
 
+  if (isError) return (<Error message={error.message} />)
+
   return (
-    <div className='max-w-[1400px] m-auto sm:px-10 px-3 py-16 min-h-[100vh]'>
+    <div className='max-w-[1400px] m-auto sm:px-10 px-3 py-14 min-h-[100vh]'>
       <div className='w-full min-h-[50vh] flex'>
-        <FilterPanel title={categoryTitle} />
+        <FilterPanel
+          category={category}
+          title={categoryTitle}
+        />
         <div className='w-full flex flex-col'>
-          <MobileFilterMenu title={categoryTitle} />
+          <MobileFilterMenu
+            category={category}
+            title={categoryTitle}
+          />
 
           {isLoading ?
             <Loading /> : null
@@ -39,6 +47,12 @@ const Products = () => {
                   product={product}
                 />
               ))}
+
+              {filteredProducts.length === 0 ?
+                <span className='w-full text-center'>
+                  No products found
+                </span> : null
+              }
             </div> : null
           }
         </div>
@@ -63,7 +77,7 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { category } }) => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery({
+  await queryClient.fetchQuery({
     queryKey: ["getProducts", category],
     queryFn: () => getProducts(category)
   });

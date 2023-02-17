@@ -5,9 +5,10 @@ import {
   getFeaturedProducts,
   useGetHomeProducts,
   HeroBanner,
-  CategoryBanner
+  Stories
 } from '@/features/home';
 import { ProductsCarousel, Loading } from '@/components';
+
 
 const Home = () => {
   const [newQuery, featuresQuery] = useGetHomeProducts();
@@ -30,7 +31,7 @@ const Home = () => {
           products={featuresQuery.data}
         /> : null
       }
-      <CategoryBanner />
+      <Stories />
     </div >
   )
 }
@@ -38,8 +39,8 @@ const Home = () => {
 export const getServerSideProps = async () => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["getProducts", "new"], getNewProducts);
-  await queryClient.prefetchQuery(["getProducts", "featured"], getFeaturedProducts);
+  await queryClient.fetchQuery(["getProducts", "new"], getNewProducts);
+  await queryClient.fetchQuery(["getProducts", "featured"], getFeaturedProducts);
 
   return {
     props: {

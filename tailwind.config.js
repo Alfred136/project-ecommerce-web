@@ -10,11 +10,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '',
-        secondary: '',
+        primary: '#0C243C',
+        secondary: '#7E8C9C',
+        tiara: '#C9D1D5'
       },
       fontFamily: {
         opens: ['Open+Sans', 'sans-serif'],
+        logo: ['Zeyada', 'Covered By Your Grace', 'sans-serif'],
       },
       screens: {
         xs: '480px',

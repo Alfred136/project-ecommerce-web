@@ -1,7 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { navTabsLeading, navTabsTrailing } from '@/constant'
-import { AiOutlineSearch, AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai'
+import { AiOutlineSearch, AiOutlineShoppingCart } from 'react-icons/ai'
 import { HiOutlineBars3BottomLeft, HiOutlineXMark } from 'react-icons/hi2'
 import { Cart } from '@/components'
 import { useStateContext } from '@/context/stateContext'
@@ -48,12 +49,13 @@ const MobileMenu = ({ show, setShow }) => (
 
 const Navbar = () => {
   const { showMenu, setShowMenu, setShowCart, totalQuantities } = useStateContext();
-  const iconClass = 'w-5 h-5 cursor-pointer hover:text-blue-600';
-  const trailingIconClass = `ml-4 ${iconClass}`;
+  const { query: { category } } = useRouter();
+  const iconClass = 'w-7 h-7 cursor-pointer hover:text-blue-600';
+  const trailingIconClass = `xs:ml-4 ml-1 ${iconClass}`;
 
   return (
-    <div className='fixed top-0 z-10 w-full bg-white text-[12px] font-semibold'>
-      <div className='flex items-center justify-between px-6 py-2 shadow-lg'>
+    <div className='fixed top-0 z-20 w-full bg-white text-[14px] text-primary font-semibold'>
+      <div className='flex items-center justify-between xs:px-6 px-3 shadow-lg'>
         <div className='flex flex-1'>
           <div className='md:flex hidden'>
             {navTabsLeading.map((navTab) => (
@@ -61,7 +63,7 @@ const Navbar = () => {
                 key={`desktop ${navTab.id}`}
                 link={navTab.link}
                 title={navTab.title}
-                styles='mr-5'
+                styles={`mr-7 ${category === navTab.id ? 'font-[709]' : ''}`}
               />
             ))}
           </div>
@@ -73,7 +75,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <Link href='/' className='text-[24px] font-semibold'>
+        <Link href='/' className='logo-text'>
           {/* TODO: lOGO, font family */}
           Flamingo
         </Link>
@@ -84,13 +86,13 @@ const Navbar = () => {
               key={`desktop ${navTab.id}`}
               link={navTab.link}
               title={navTab.title}
-              styles='md:block hidden ml-5'
+              styles='md:block hidden ml-7'
             />
           ))}
-          <AiOutlineSearch className={trailingIconClass} />
+          <AiOutlineSearch className={trailingIconClass} onClick={() => window.alert('feature coming soon!')} />
           <div className='relative' onClick={() => setShowCart(prev => !prev)}>
             <AiOutlineShoppingCart className={trailingIconClass} />
-            <span className='absolute top-[-4px] right-[-4px] w-3 h-3 rounded-full bg-blue-600 text-white text-[8px] text-center'>
+            <span className='absolute top-[-4px] right-[-4px] w-4 h-4 rounded-full bg-blue-600 text-white text-[11px] text-center font-light'>
               {totalQuantities}
             </span>
           </div>

@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
+import useLocalStorageState from 'use-local-storage-state'
 import { toast } from 'react-hot-toast';
 
 const Context = createContext();
@@ -6,9 +7,9 @@ const Context = createContext();
 export const StateContext = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([]);
-  const [totalPrice, setTotalPrice] = useState(0);
-  const [totalQuantities, setTotalQuantities] = useState(0);
+  const [cartItems, setCartItems] = useLocalStorageState('cartItems', { defaultValue: [] });
+  const [totalPrice, setTotalPrice] = useLocalStorageState('totalPrice', { defaultValue: 0 });
+  const [totalQuantities, setTotalQuantities] = useLocalStorageState('totalQuantities', { defaultValue: 0 });
 
   let foundProduct;
   let foundProductIndex;
@@ -40,7 +41,8 @@ export const StateContext = ({ children }) => {
 
   const onRemove = (product) => {
     foundProduct = cartItems.find((item) => item._id === product._id && item.size === product.size);
-    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+    foundProductIndex = cartItems.findIndex((item) => item._id === product._id && item.size === product.size);
+    const newCartItems = cartItems.filter((item, index) => index !== foundProductIndex);
 
     setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price * foundProduct.quantity);
     setTotalQuantities(prevTotalQuantities => prevTotalQuantities - foundProduct.quantity);

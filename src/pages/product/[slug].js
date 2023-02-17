@@ -8,13 +8,18 @@ import {
   ImageCarousel,
   ProductInfo
 } from '@/features/product'
-import { Loading, ProductsCarousel } from '@/components'
+import { Loading, Error, ProductsCarousel } from '@/components'
+
 
 const ProductDetails = ({ slug }) => {
   const [productQuery, featuresQuery] = useGetProduct(slug);
 
+  if (productQuery.isError) return (<Error message={productQuery.error.message} />)
+  if (!productQuery.data) return (<Error message='Product is not found.' />)
+
   return (
     <div className='flex flex-col w-full overflow-hidden'>
+      {console.log(productQuery.data)}
       <div className='flex md:flex-row flex-col justify-center w-full min-h-[60vh] mb-10'>
         {productQuery.isLoading ? <Loading /> : null}
         {productQuery.isSuccess ?
@@ -54,8 +59,8 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async ({ params: { slug } }) => {
   const queryClient = new QueryClient();
 
-  await queryClient.prefetchQuery(["getProduct", slug], () => getProduct(slug));
-  await queryClient.prefetchQuery(["getProducts", "featured"], getFeaturedProducts);
+  await queryClient.fetchQuery(["getProduct", slug], () => getProduct(slug));
+  await queryClient.fetchQuery(["getProducts", "featured"], getFeaturedProducts);
 
   return {
     props: {

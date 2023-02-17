@@ -10,7 +10,7 @@ export const getProductsSlug = async () => {
 
 export const getProduct = async (slug) => {
   const query = `*[_type == "product" && slug.current == '${slug}'][0]`;
-  return await client.fetch(query)
+  return await client.fetch(query);
 };
 
 export const getFeaturedProducts = async () => {

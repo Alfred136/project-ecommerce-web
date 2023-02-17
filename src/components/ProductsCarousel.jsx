@@ -45,14 +45,14 @@ const ProductsCarousel = ({ title, products }) => {
 
   return (
     <div className='pb-[50px] '>
-      <p className='max-w-[1400px] m-auto mb-5 text-[24px] font-bold sm:px-10 px-4'>
+      <p className='max-w-[1400px] m-auto text-[24px] font-bold sm:px-10 px-4'>
         {title}
       </p>
 
-      <div ref={ref} className='w-[100vw] overflow-scroll scrollbar-hide'>
-        <div className='max-w-[1400px] m-auto sm:px-10 px-4'>
+      <div ref={ref} className='w-[100vw] overflow-scroll scrollbar-hide '>
+        <div className='max-w-[1400px] m-auto sm:px-10 px-4 pt-5'>
           <div className='w-fit pb-10 sm:pr-[60px] pr-[32px] cursor-grab'>
-            <div className='flex gap-8 translate-x-0'>
+            <div className='flex gap-7 translate-x-0'>
               {products?.map((product) => (
                 <ProductCard
                   key={product._id}

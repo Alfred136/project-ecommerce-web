@@ -1,17 +1,28 @@
+import Link from "next/link";
 import { useProductsContext } from "../context/productsContext";
 import { collections, tags, sorts } from "@/constant";
 
 const textClass = 'mb-3 text-[14px] cursor-pointer hover:underline'
-const selectedTextClass = 'mb-3 text-[15px] text-blue-800 font-semibold cursor-pointer hover:underline'
+const selectedTextClass = 'mb-3 text-[16px] text-secondary font-bold cursor-pointer hover:underline'
 
-const FilterPanel = ({ title }) => {
+const FilterPanel = ({ category, title }) => {
   const { collection, setCollection, sortBy, setSortBy, onFilterChange, reset } = useProductsContext();
+  const collectionName = collections.find((item) => item.id === collection)?.name || '';
 
   return (
     <div className='md:flex hidden flex-col w-[30%] pr-6'>
-      <h2 className='text-[20px] font-bold mb-3'>
+      <div className='flex text-[12px] font-bold mb-1'>
+        <Link href='/' className='cursor-pointer hover:underline'>
+          Home
+        </Link>
+        <span className='capitalize'>
+          / {category}/ {collectionName}
+        </span>
+      </div>
+
+      <span className='text-[24px] font-bold mb-3'>
         {title}
-      </h2>
+      </span>
       {collections.map((item) => (
         <span
           key={item.id}
@@ -32,7 +43,7 @@ const FilterPanel = ({ title }) => {
             type='checkbox'
             name='filterTag'
             onChange={() => { onFilterChange(tag.id) }}
-            className='w-[16px] h-[16px] mt-1 mr-[4px]'
+            className='w-[16px] h-[16px] mt-1 mr-[4px] cursor-pointer'
           />
           <span>{tag.name}</span>
         </div>

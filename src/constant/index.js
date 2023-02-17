@@ -36,120 +36,7 @@ export const navTabsTrailing = [
   }
 ];
 
-export const newArrivals = [
-  {
-    id: 'p1',
-    name: 'p1 ppppp1 ppppp1ppppp1 ppppp1',
-    description: 'desc1, desc1 desc1desc1desc1 desc1',
-    price: 140
-  },
-  {
-    id: 'p2',
-    name: 'p2',
-    description: 'desc1, desc1',
-    price: 700
-  },
-  {
-    id: 'p3',
-    name: 'p3',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p4',
-    name: 'p4',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p5',
-    name: 'p5',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p6',
-    name: 'p1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p7',
-    name: 'p1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p8',
-    name: 'p1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p9',
-    name: 'p1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'p10',
-    name: 'p1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-]
-
-export const featureProducts = [
-  {
-    id: 'f1',
-    name: 'f1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'f2',
-    name: 'f2',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'f3',
-    name: 'f3',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'f4',
-    name: 'f4',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'f5',
-    name: 'f5',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'f6',
-    name: 'f1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-  {
-    id: 'f7',
-    name: 'f1',
-    description: 'desc1, desc1',
-    price: 70
-  },
-]
-
 //Products
-export const menSizes = [28, 29, 30, 31, 32, 33, 34, 35]
-
-export const womenSizes = [24, 25, 26, 27, 28, 29, 30, 31]
-
-//use this
 export const allSizes = [
   {
     id: 'men',
@@ -159,7 +46,7 @@ export const allSizes = [
     id: 'women',
     options: [24, 25, 26, 27, 28, 29, 30, 31]
   },
-]
+];
 //use this
 export const categories = [
   {
@@ -178,10 +65,6 @@ export const categories = [
     id: 'sale',
     name: 'Products on Sale'
   },
-  // {
-  //   id: 'featured',
-  //   name: 'Featured Products'
-  // },
 ]
 
 export const collections = [
@@ -191,34 +74,34 @@ export const collections = [
   },
   {
     id: 'collection-1',
-    name: 'Collection 1'
+    name: 'Comfortable Jeans'
   },
   {
     id: 'collection-2',
-    name: 'Collection 2'
+    name: 'Looks badass'
   },
   {
     id: 'collection-3',
-    name: 'Collection 3'
+    name: 'Too Hot to Handle'
   },
 ]
 
 export const tags = [
   {
     id: 'tag-1',
-    name: 'Tag 1'
+    name: 'Slim'
   },
   {
     id: 'tag-2',
-    name: 'Tag 2'
+    name: 'Regular'
   },
   {
     id: 'tag-3',
-    name: 'Tag 3'
+    name: 'Straight'
   },
   {
     id: 'tag-4',
-    name: 'Tag 4'
+    name: 'Loose'
   },
 ]
 
@@ -235,134 +118,6 @@ export const sorts = [
   },
 ]
 
-export const products = [
-  {
-    id: 'product1',
-    name: 'product1',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'men',
-    category: 'new',
-    collection: 'collection-2',
-    tags: [
-      'tag1',
-      'tag2'
-    ]
-  },
-  {
-    id: 'product2',
-    name: 'product2',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'men',
-    category: 'sale',
-    collection: 'collection-2',
-    tags: [
-      'tag1',
-      'tag2'
-    ]
-  },
-  {
-    id: 'product3',
-    name: 'product3',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'men',
-    category: 'new',
-    collection: 'collection-2',
-    tags: [
-      'tag1',
-      'tag2'
-    ]
-  },
-  {
-    id: 'product4',
-    name: 'product4',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'men',
-    category: 'new',
-    collection: 'collection-1',
-    tags: [
-      'tag2'
-    ]
-  },
-  {
-    id: 'product5',
-    name: 'product5',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'men',
-    category: 'new',
-    collection: 'collection-1',
-    tags: [
-      'tag1',
-    ]
-  },
-  {
-    id: 'product6',
-    name: 'product6',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'men',
-    category: 'new',
-    collection: 'collection-1',
-    tags: [
-      'tag1',
-    ]
-  },
-  {
-    id: 'product7',
-    name: 'product7',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'women',
-    category: 'new',
-    collection: 'collection-2',
-    tags: [
-      'tag1',
-      'tag2'
-    ]
-  },
-  {
-    id: 'product8',
-    name: 'product8',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'women',
-    category: 'new',
-    collection: 'collection-3',
-    tags: [
-      'tag1',
-      'tag2'
-    ]
-  }, {
-    id: 'product9',
-    name: 'product9',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'women',
-    category: 'new',
-    collection: 'collection-1',
-    tags: [
-      'tag2'
-    ]
-  },
-  {
-    id: 'product10',
-    name: 'product10',
-    description: 'product1 desc',
-    price: 70,
-    gender: 'women',
-    category: 'new',
-    collection: 'collection-1',
-    tags: [
-      'tag1',
-    ]
-  }
-]
-//Products End
-
 export const footerLinks = [
   {
     title: "Shop",
@@ -376,20 +131,20 @@ export const footerLinks = [
         link: "./products/women",
       },
       {
+        name: "Sales",
+        link: "./products/sales",
+      },
+      {
         name: "New Arrivals",
         link: "./products/new",
       },
-      {
-        name: "Sales",
-        link: "./products/sales",
-      }
     ],
   },
   {
     title: "Help",
     links: [
       {
-        name: "Help 1 Help 1 Help 1",
+        name: "Help 1",
         link: "https://www.google.com",
       },
       {

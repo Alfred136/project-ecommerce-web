@@ -9,7 +9,7 @@ const ProductCardBig = ({ product }) => {
   const size = (allSizes.find((size) => size.id === gender.toLowerCase()) || allSizes[0]);
 
   return (
-    <div className='sm:w-[33.3%] w-[50%] md:px-3 px-2 mb-16'>
+    <div className='xs:w-[50%] sm:w-[33.3%] w-[100%] h-[450px] md:px-3 px-2 mb-20'>
       <div className='card-container'>
         <Link href={`/product/${slug.current}`}>
           <img
@@ -31,7 +31,7 @@ const ProductCardBig = ({ product }) => {
                   className='w-[36px] h-[36px] flex justify-center items-center border-[0.5px] cursor-pointer border-black hover:text-white hover:bg-black mx-1 mb-3'
                   onClick={() => { onAdd(product, size) }}
                 >
-                  {size}
+                  <span className='text-[14px]'>{size}</span>
                 </div>
               ))}
             </div>
@@ -39,7 +39,7 @@ const ProductCardBig = ({ product }) => {
         </div>
       </div>
 
-      <div className='font-semibold'>
+      <div className='font-semibold mt-2'>
         {name}
       </div>
       <div>

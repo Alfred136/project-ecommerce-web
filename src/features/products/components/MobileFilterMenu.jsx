@@ -3,14 +3,14 @@ import MobileFilterPanel from "./MobileFilterPanel";
 import { SlArrowDown, SlArrowUp } from "react-icons/sl";
 import { IoSquareSharp, IoGridSharp } from "react-icons/io5";
 
-const MobileFilterMenu = ({ title }) => {
+const MobileFilterMenu = ({ category, title }) => {
   const { showFilterDropdown, setShowFilterDropdown } = useProductsContext();
 
   return (
     <div className='md:hidden flex flex-col w-full md:px-3 px-2 pb-4'>
-      <p className='text-[20px] font-bold pb-3 text-center '>{title}</p>
+      <p className='text-[24px] font-bold pb-3 text-center '>{title}</p>
       <div className='w-full flex justify-between py-3 border-y-[0.5px] border-gray-500'>
-        <div className='flex cursor-pointer' onClick={() => setShowFilterDropdown(prev => !prev)}>
+        <div className='flex items-center cursor-pointer' onClick={() => setShowFilterDropdown(prev => !prev)}>
           <span>Filter/Sort</span>
           {showFilterDropdown
             ? <SlArrowUp className='w-4 h-4 ml-4' />
@@ -22,7 +22,7 @@ const MobileFilterMenu = ({ title }) => {
       </div>
 
       <div className='relative'>
-        <MobileFilterPanel />
+        <MobileFilterPanel category={category} />
       </div>
     </div>
   )

@@ -2,13 +2,13 @@
 import { getNewProducts, getFeaturedProducts, useGetHomeProducts } from "./api/useGetHomeProducts";
 
 // components
-import CategoryBanner from "./components/CategoryBanner";
 import HeroBanner from "./components/HeroBanner";
+import Stories from "./components/Stories";
 
 export {
   getNewProducts,
   getFeaturedProducts,
   useGetHomeProducts,
-  CategoryBanner,
-  HeroBanner
+  HeroBanner,
+  Stories
 };

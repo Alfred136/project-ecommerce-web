@@ -9,7 +9,7 @@ export const Layout = ({ children }) => {
         <title>Ecommerce store</title>
       </Head>
       <Navbar />
-      <main className='mt-[52px]'>
+      <main className='mt-[55px]'>
         {children}
       </main>
       <footer>

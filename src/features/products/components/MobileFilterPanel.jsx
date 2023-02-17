@@ -2,9 +2,8 @@ import { useProductsContext } from "../context/productsContext";
 import { collections, tags, sorts } from "@/constant";
 import { HiOutlineXMark } from "react-icons/hi2";
 
-const textClass = 'mb-3 text-[14px] cursor-pointer hover:underline'
-const selectedTextClass = 'mb-3 text-[15px] text-blue-800 font-semibold cursor-pointer hover:underline'
-
+const textClass = 'mb-3 text-[14px] cursor-pointer hover:underline';
+const selectedTextClass = 'mb-3 text-[16px] text-secondary font-bold cursor-pointer hover:underline';
 
 const MobileFilterPanel = (props) => {
   const { collection, setCollection, sortBy, setSortBy, onFilterChange, showFilterDropdown, setShowFilterDropdown } = useProductsContext();
@@ -12,16 +11,16 @@ const MobileFilterPanel = (props) => {
   return (
     <>
       {showFilterDropdown ?
-        <div className='absolute top-0 z-20 w-full bg-gray-100'>
+        <div className='absolute top-0 z-10 w-full bg-gray-100 rounded-b-md shadow-xl px-6 py-4'>
           <div className='flex flex-col'>
-            <div className='flex justify-around'>
+            <div className='flex justify-between'>
               <span>Filter</span>
-              <HiOutlineXMark className='w-4 h-4 cursor-pointer hove:text-blue-600' onClick={() => { setShowFilterDropdown(false) }} />
+              <HiOutlineXMark className='w-5 h-5 cursor-pointer hover:text-blue-600' onClick={() => { setShowFilterDropdown(false) }} />
             </div>
             {/* filter panel */}
-            <div className='flex justify-between gap-4'>
+            <div className='flex flex-wrap justify-between gap-8'>
               <div className='flex flex-col'>
-                <h2 className='text-[20px] font-bold mb-3'>
+                <h2 className='text-[18px] font-bold mb-3'>
                   Collections
                 </h2>
                 {collections.map((item) => (

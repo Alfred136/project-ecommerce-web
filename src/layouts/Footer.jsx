@@ -4,11 +4,11 @@ import { Button } from '@/components'
 import { footerLinks, socialMedias } from '@/constant'
 
 const SignupForm = () => {
-  const [inputEmail, setInputEmail] = useState('')
+  const [inputEmail, setInputEmail] = useState('');
 
   const onSubmit = () => {
-    window.alert('Todo: implement notification via global state.')
-    setInputEmail('')
+    window.alert('You are subscipted!');
+    setInputEmail('');
   }
 
   return (
@@ -20,7 +20,7 @@ const SignupForm = () => {
         type='text'
         value={inputEmail}
         placeholder='Email address...'
-        className='text-black p-2 mb-3 focus:outline-none'
+        className='text-black text-[14px] font-medium bg-gray-50 p-2 mb-3 focus:outline-none'
         onChange={(event) => setInputEmail(event.target.value)}
       />
       <Button
@@ -67,7 +67,7 @@ const SiteMap = () => (
 )
 
 const Footer = () => (
-  <div className='w-full bg-slate-700 text-gray-50'>
+  <div className='w-full bg-primary text-gray-50'>
     <div className='max-w-[1400px] m-auto px-8 py-10 bg-skate-700'>
       <div className='w-full flex md:flex-row flex-col'>
         <div className='flex-1 flex flex-col'>
