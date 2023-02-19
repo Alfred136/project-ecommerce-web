@@ -10,7 +10,7 @@ const ProductInfo = ({ product }) => {
   const sizes = (allSizes.find((size) => size.id === gender.toLowerCase()) || allSizes[0]).options;
 
   const onClickSize = (size) => {
-    setSelectedSize(prev => prev === size ? null : size)
+    setSelectedSize(size === selectedSize ? null : size)
   }
 
   return (
@@ -26,7 +26,7 @@ const ProductInfo = ({ product }) => {
           {sizes.map((size) => (
             <div
               key={size}
-              className={`w-[48px] h-[48px] flex justify-center items-center border text-[12px] cursor-pointer border-black lg:hover:text-white lg:hover:bg-primary mr-2 mb-3 ${size === selectedSize ? 'text-white bg-slate-900' : ''}`}
+              className={`w-[48px] h-[48px] flex justify-center items-center border text-[12px] cursor-pointer border-black hover:text-white hover:bg-primary mr-2 mb-3 ${size === selectedSize ? 'text-white bg-slate-900' : ''}`}
               onClick={() => onClickSize(size)}
             >
               {size}

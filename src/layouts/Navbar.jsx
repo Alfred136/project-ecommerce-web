@@ -75,7 +75,7 @@ const Navbar = () => {
           </div>
         </div>
 
-        <Link href='/' className='logo-text' onClick={() => setShowMenu(false)}>
+        <Link href='/' className='logo-text'>
           {/* TODO: lOGO, font family */}
           Flamingo
         </Link>
