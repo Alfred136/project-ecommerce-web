@@ -61,6 +61,10 @@ const Cart = () => {
   const { showCart, setShowCart, totalPrice, cartItems, totalQuantities, onClear } = useStateContext()
 
   const handleCheckout = async () => {
+    if (cartItems.length === 0) {
+      return toast.error('Empty cart!');
+    }
+
     const res = await fetch('/api/stripe', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -128,8 +132,10 @@ const Cart = () => {
                 </div>
                 <Button
                   title='Pay with stripe'
+                  theme={cartItems.length === 0 ? 'disabled' : 'primary'}
                   styles='!w-full mb-4'
                   onClick={handleCheckout}
+                  disable={cartItems.length === 0}
                 />
                 <Button
                   title='Clear cart'
