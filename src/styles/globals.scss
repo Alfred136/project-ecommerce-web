@@ -12,6 +12,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Montserrat' ,'Open Sans', sans-serif;
   color: #0C243C;
@@ -66,8 +70,10 @@ body {
   text-align: center;
 }
 
-.card-container:hover .card-image {
-  object-fit: none;
+@media only screen and (min-width: 1200px) {
+  .card-container:hover .card-image {
+    object-fit: none;
+  }
 }
 
 .card-container:hover .overlay {
