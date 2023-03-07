@@ -63,24 +63,18 @@ body {
   cursor: pointer;
 }
 
-.overlay {
+.card-overlay {
   opacity: 0;
   position: absolute;
   bottom: 0;
   text-align: center;
 }
 
-@media only screen and (min-width: 1200px) {
-  .card-container:hover .card-image {
-    object-fit: none;
-  }
-}
-
-.card-container:hover .overlay {
+.card-container:hover .card-overlay {
   opacity: 1;
 }
 
-.gray-layer {
+.cart-overlay {
   background-color: rgba(22, 27, 27, 0.8);
 }
 

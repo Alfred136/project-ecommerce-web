@@ -18,33 +18,29 @@ const LinkItem = ({ link, title, styles = '', onClick = () => { } }) => (
 )
 
 const MobileMenu = ({ show, setShow }) => (
-  <>
-    {show ?
-      <div className='absolute top-[50px] z-[-1] w-full min-h-[100vh] bg-white'>
-        <div className='flex flex-col'>
-          {navTabsLeading.map((navTab) => (
-            <LinkItem
-              key={`mobile ${navTab.id}`}
-              link={navTab.link}
-              title={navTab.title}
-              styles='pl-3 py-6 border-b'
-              onClick={() => setShow(false)}
-            />
-          ))}
+  <div className={`relative z-[-2] w-full ${show ? 'h-[100vh] overflow-y-auto' : 'h-0 overflow-y-hidden'} bg-white ease-out duration-[250ms]`}>
+    <div className='flex flex-col'>
+      {navTabsLeading.map((navTab) => (
+        <LinkItem
+          key={`mobile ${navTab.id}`}
+          link={navTab.link}
+          title={navTab.title}
+          styles='pl-3 py-6 border-b'
+          onClick={() => setShow(false)}
+        />
+      ))}
 
-          {navTabsTrailing.map((navTab) => (
-            <LinkItem
-              key={`mobile ${navTab.id}`}
-              link={navTab.link}
-              title={navTab.title}
-              styles='pl-3 py-6 border-b'
-              onClick={() => setShow(false)}
-            />
-          ))}
-        </div>
-      </div> : null
-    }
-  </>
+      {navTabsTrailing.map((navTab) => (
+        <LinkItem
+          key={`mobile ${navTab.id}`}
+          link={navTab.link}
+          title={navTab.title}
+          styles='pl-3 py-6 border-b'
+          onClick={() => setShow(false)}
+        />
+      ))}
+    </div>
+  </div>
 )
 
 const Navbar = () => {

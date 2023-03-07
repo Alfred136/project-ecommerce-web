@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
       <div className='flex-none w-[360px] h-[450px] bg-white rounded-md shadow-lg hover:scale-[1.08] transition-all duration-300'>
         <img
           src={image ? urlFor(image[0]) : '/no-image.png'}
-          className='w-full h-[360px] rounded-t-md border-b-0 hover:object-none object-cover'
+          className='w-full h-[360px] rounded-t-md border-b-0 object-cover'
         />
         {/* Product Info */}
         <div className='w-full h-[80px] flex justify-between items-center px-4 py-2'>

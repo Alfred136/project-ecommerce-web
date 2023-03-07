@@ -19,7 +19,7 @@ const ProductCardBig = ({ product }) => {
           />
         </Link>
 
-        <div className='overlay md:block hidden'>
+        <div className='card-overlay md:block hidden'>
           <div className='flex flex-col bg-gray-50 opacity-90 p-2'>
             <p className='mb-4 font-semibold'>
               Quick Add
