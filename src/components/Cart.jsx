@@ -79,9 +79,9 @@ const Cart = () => {
   }
 
   return (
-    <div className={`absolute top-0 ${showCart ? 'w-full' : ''} h-[100vh]`}>
+    <div className={`absolute top-0 ${showCart ? 'w-full' : ''} h-[130vh]`}>
       <div className={`absolute z-10 w-full h-full cursor-pointer cart-overlay`} onClick={() => setShowCart(false)} />
-      <div className={`absolute z-20 top-0 ${showCart ? 'right-0' : 'right-[-100%]'} sm:w-[50%] md:w-[40%] xl:w-[30%] w-full h-full bg-white text-[16px] font-normal overflow-y-auto ease-out duration-300`}>
+      <div className={`absolute z-20 top-0 ${showCart ? 'right-0' : 'right-[-100%]'} sm:w-[50%] md:w-[40%] xl:w-[30%] w-full h-full bg-white text-[16px] font-normal overflow-y-auto ease-out duration-[250ms]`}>
         <div className='flex flex-col p-5'>
           <div className='relative'>
             <HiOutlineXMark className='absolute top-0 left-0 w-8 h-8 cursor-pointer hover:text-blue-600' onClick={() => setShowCart(false)} />

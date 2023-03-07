@@ -18,7 +18,7 @@ const LinkItem = ({ link, title, styles = '', onClick = () => { } }) => (
 )
 
 const MobileMenu = ({ show, setShow }) => (
-  <div className={`relative z-[-2] w-full ${show ? 'h-[100vh] overflow-y-auto' : 'h-0 overflow-y-hidden'} bg-white ease-out duration-[250ms]`}>
+  <div className={`relative z-[-2] w-full ${show ? 'h-[130vh] overflow-y-auto' : 'h-0 overflow-y-hidden'} bg-white ease-out duration-[250ms]`}>
     <div className='flex flex-col'>
       {navTabsLeading.map((navTab) => (
         <LinkItem
@@ -46,12 +46,12 @@ const MobileMenu = ({ show, setShow }) => (
 const Navbar = () => {
   const { showMenu, setShowMenu, setShowCart, totalQuantities } = useStateContext();
   const { query: { category } } = useRouter();
-  const iconClass = 'w-7 h-7 cursor-pointer hover:text-blue-600';
-  const trailingIconClass = `xs:ml-4 ml-1 ${iconClass}`;
+  const iconClass = 'w-8 h-8 cursor-pointer hover:text-blue-600';
+  const trailingIconClass = `xs:ml-4 ml-[6px] ${iconClass}`;
 
   return (
     <div className='fixed top-0 z-20 w-full bg-white text-[14px] text-primary font-semibold'>
-      <div className='flex items-center justify-between xs:px-6 px-3 shadow-lg'>
+      <div className='flex items-center justify-between xs:px-6 px-4 shadow-lg'>
         <div className='flex flex-1'>
           <div className='md:flex hidden'>
             {navTabsLeading.map((navTab) => (

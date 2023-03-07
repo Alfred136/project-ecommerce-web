@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { urlFor } from '@/lib/sanityClient'
 
@@ -13,8 +14,11 @@ const ProductCard = ({ product }) => {
       : `product/${slug.current}`}
     >
       <div className='flex-none w-[360px] h-[450px] bg-white rounded-md shadow-lg hover:scale-[1.08] transition-all duration-300'>
-        <img
-          src={image ? urlFor(image[0]) : '/no-image.png'}
+        <Image
+          src={`${image ? urlFor(image[0]) : '/no-image.png'}`}
+          alt={image ? name : 'no image'}
+          width={600}
+          height={600}
           className='w-full h-[360px] rounded-t-md border-b-0 object-cover'
         />
         {/* Product Info */}

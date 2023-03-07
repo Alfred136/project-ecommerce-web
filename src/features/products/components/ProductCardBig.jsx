@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from 'next/image'
 import { useStateContext } from "@/context/stateContext";
 import { urlFor } from "@/lib/sanityClient";
 import { allSizes } from "@/constant";
@@ -12,9 +13,11 @@ const ProductCardBig = ({ product }) => {
     <div className='xs:w-[50%] sm:w-[33.3%] w-[100%] h-[450px] md:px-3 px-2 mb-20'>
       <div className='card-container'>
         <Link href={`/product/${slug.current}`}>
-          <img
-            src={image ? urlFor(image[0]) : ''}
-            alt={product.name}
+          <Image
+            src={`${image ? urlFor(image[0]) : '/no-image.png'}`}
+            alt={image ? name : 'no image'}
+            width={450}
+            height={450}
             className='card-image'
           />
         </Link>
