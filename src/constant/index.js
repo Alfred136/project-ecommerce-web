@@ -17,7 +17,7 @@ export const navTabsLeading = [
     link: '/products/sale',
   },
   {
-    id: 'new-arrivals',
+    id: 'new',
     title: 'New Arrivals',
     link: '/products/new',
   }
