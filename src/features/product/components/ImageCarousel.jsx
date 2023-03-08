@@ -1,7 +1,7 @@
 import { urlFor } from "@/lib/sanityClient";
 import Carousel from "react-bootstrap/Carousel";
 
-const imgClass = 'w-full md:h-[75vh] h-[60vh] object-cover';
+const imgClass = 'w-full md:h-[75vh] h-[60vh] object-cover skeleton';
 
 const ImageCarousel = ({ image }) => (
   <div className='md:w-[50%] w-full h-full'>
