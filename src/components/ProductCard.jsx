@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
           alt={image ? name : 'no image'}
           width={600}
           height={600}
-          className='w-full h-[360px] rounded-t-md border-b-0 object-cover'
+          className='w-full h-[360px] rounded-t-md border-b-0 object-cover skeleton'
         />
         {/* Product Info */}
         <div className='w-full h-[80px] flex justify-between items-center px-4 py-2'>

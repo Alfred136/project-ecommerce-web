@@ -1,7 +1,11 @@
+import Image from "next/image";
+
 const StoryImage = ({ source }) => (
-  <div className='md:w-[600px] w-full h-[650px]'>
-    <img
+  <div className='relative md:w-[600px] w-full h-[650px]'>
+    <Image
       src={source}
+      alt={'story'}
+      fill
       className='w-full h-full object-cover'
     />
   </div>

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import { AiOutlineMinus, AiOutlinePlus } from 'react-icons/ai'
 import { HiOutlineXMark } from 'react-icons/hi2'
 import { BsCart3 } from 'react-icons/bs'
@@ -18,11 +19,13 @@ const CartItem = ({ item }) => {
 
   return (
     <div className='flex py-4 mr-3 border-b border-gray-300'>
-      <div className='w-[120px] h-[100px] self-center mr-4'>
-        <img
-          src={image ? urlFor(image[0]) : ''}
-          alt={`cart item: ${name}`}
-          className='w-full h-full'
+      <div className='relative w-[120px] h-[100px] mr-4'>
+        <Image
+          src={`${image ? urlFor(image[0]) : '/no-image.png'}`}
+          alt={image ? name : 'no image'}
+          width={400}
+          height={600}
+          className='w-full h-full object-fit'
         />
       </div>
 

@@ -18,7 +18,7 @@ const ProductCardBig = ({ product }) => {
             alt={image ? name : 'no image'}
             width={450}
             height={450}
-            className='card-image'
+            className='skeleton card-image'
           />
         </Link>
 

@@ -1,13 +1,18 @@
 import React from 'react'
+import Image from 'next/image'
 
 const Stores = () => {
   return (
     <div className='w-full'>
       {/* banner */}
-      <div className='relative w-full h-[65vh] mb-8'>
-        <img
+      <div className='relative w-full h-[65vh] mb-8 bg-slate-200'>
+        <Image
           src='/jeans-banner2.jpg'
-          className='w-full h-full opacity-70 object-cover'
+          alt='contact us'
+          width={1920}
+          height={1280}
+          priority
+          className='w-full h-full object-cover opacity-80 skeleton'
         />
         <span className='absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] text-primary text-[50px] font-bold text-center leading-none'>
           Stores
