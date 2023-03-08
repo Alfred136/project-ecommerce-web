@@ -8,7 +8,7 @@ import {
   ImageCarousel,
   ProductInfo
 } from '@/features/product'
-import { Loading, Error, ProductsCarousel } from '@/components'
+import { LoadingSpinner, Error, ProductsCarousel } from '@/components'
 
 
 const ProductDetails = ({ slug }) => {
@@ -21,7 +21,7 @@ const ProductDetails = ({ slug }) => {
     <div className='flex flex-col w-full overflow-hidden'>
       {console.log(productQuery.data)}
       <div className='flex md:flex-row flex-col justify-center w-full min-h-[60vh] mb-10'>
-        {productQuery.isLoading ? <Loading /> : null}
+        {productQuery.isLoading ? <LoadingSpinner /> : null}
         {productQuery.isSuccess ?
           <>
             <ImageCarousel image={productQuery.data?.image} />
@@ -30,7 +30,7 @@ const ProductDetails = ({ slug }) => {
         }
       </div>
 
-      {featuresQuery.isLoading ? <Loading /> : null}
+      {featuresQuery.isLoading ? <LoadingSpinner /> : null}
       {featuresQuery.isSuccess ?
         <ProductsCarousel
           title='Recommend for you'

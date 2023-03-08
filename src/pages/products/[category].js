@@ -1,7 +1,7 @@
 import React from 'react';
 import { QueryClient, dehydrate } from '@tanstack/react-query';
 import { categories } from '@/constant';
-import { Loading, Error } from '@/components';
+import { LoadingSpinner, Error } from '@/components';
 import {
   getProducts,
   useGetProducts,
@@ -37,7 +37,7 @@ const Products = () => {
           />
 
           {isLoading ?
-            <Loading /> : null
+            <LoadingSpinner /> : null
           }
           {isSuccess ?
             <div className='w-full flex flex-wrap'>

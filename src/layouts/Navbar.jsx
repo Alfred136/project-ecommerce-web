@@ -45,7 +45,8 @@ const MobileMenu = ({ show, setShow }) => (
 
 const Navbar = () => {
   const { showMenu, setShowMenu, setShowCart, totalQuantities } = useStateContext();
-  const { query: { category } } = useRouter();
+  const router = useRouter();
+  const { query: { category } } = router;
   const iconClass = 'w-8 h-8 cursor-pointer hover:text-blue-600';
   const trailingIconClass = `xs:ml-4 ml-[6px] ${iconClass}`;
 
@@ -59,7 +60,7 @@ const Navbar = () => {
                 key={`desktop ${navTab.id}`}
                 link={navTab.link}
                 title={navTab.title}
-                styles={`mr-7 ${category === navTab.id ? 'font-[709]' : ''}`}
+                styles={`mr-7 ${category === navTab.id ? 'font-[700]' : ''}`}
               />
             ))}
           </div>
@@ -82,7 +83,7 @@ const Navbar = () => {
               key={`desktop ${navTab.id}`}
               link={navTab.link}
               title={navTab.title}
-              styles='md:block hidden ml-7'
+              styles={`md:block hidden ml-7 ${router.asPath === '/' + navTab.id ? 'font-[700]' : ''}`}
             />
           ))}
           <AiOutlineSearch className={trailingIconClass} onClick={() => window.alert('feature coming soon!')} />

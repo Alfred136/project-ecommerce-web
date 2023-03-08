@@ -7,7 +7,7 @@ import {
   HeroBanner,
   Stories
 } from '@/features/home';
-import { ProductsCarousel, Loading } from '@/components';
+import { ProductsCarousel, LoadingSpinner } from '@/components';
 
 
 const Home = () => {
@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className='overflow-hidden'>
       <HeroBanner />
-      {newQuery.isLoading ? <Loading /> : null}
+      {newQuery.isLoading ? <LoadingSpinner /> : null}
       {newQuery.isSuccess ?
         <ProductsCarousel
           title='New Arrivals'
@@ -24,7 +24,7 @@ const Home = () => {
         /> : null
       }
 
-      {featuresQuery.isLoading ? <Loading /> : null}
+      {featuresQuery.isLoading ? <LoadingSpinner /> : null}
       {featuresQuery.isSuccess ?
         <ProductsCarousel
           title='Featured Products'
