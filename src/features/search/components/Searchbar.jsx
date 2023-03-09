@@ -11,9 +11,9 @@ const Searchbar = ({ handleSubmit }) => {
   }
 
   return (
-    <div className='flex justify-between w-full gap-2'>
+    <div className='flex xs:flex-row flex-col justify-between w-full gap-2'>
       <input
-        className='w-full px-5 bg-gray-100 rounded-md outline-none border border-transparent hover:border-tiara focus:border-tiara'
+        className='w-full px-5 py-3 bg-gray-100 rounded-md outline-none border border-transparent hover:border-tiara focus:border-tiara'
         ref={inputRef}
         onChange={checkSpecialChar}
         placeholder='Search Products'

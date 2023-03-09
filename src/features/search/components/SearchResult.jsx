@@ -1,6 +1,6 @@
 const SearchResult = ({ isLoading = true, count, keyword }) => {
   return (
-    <span className='text-[18px] text-center'>
+    <span className='text-[20px] text-center' style={{ overflowWrap: 'anywhere' }}>
       {isLoading
         ? <>Fetching data...</>
         : <>Showing {count} results for "{keyword}"</>
