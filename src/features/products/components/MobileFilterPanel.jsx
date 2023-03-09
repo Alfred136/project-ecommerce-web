@@ -16,7 +16,6 @@ const MobileFilterPanel = (props) => {
         <div className='absolute top-[-1px] left-[-1%] z-10 w-[102%] bg-[#fefefe] rounded-b-sm shadow-[0_25px_50px_-5px_rgba(0,0,0,0.3)] ss:px-10 px-4 pt-4 pb-10'>
           <div className='flex flex-col'>
             {/* filter panel */}
-            {/* <div className='flex flex-wrap xs:justify-between ss:justify-around gap-10'> */}
             <div className='flex flex-wrap justify-between gap-5'>
               <div className={filterGroupClass}>
                 <h2 className={h2Class}>

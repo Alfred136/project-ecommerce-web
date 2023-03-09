@@ -73,7 +73,6 @@ const Navbar = () => {
         </div>
 
         <Link href='/' className='logo-text' onClick={() => setShowMenu(false)}>
-          {/* TODO: lOGO, font family */}
           Flamingo
         </Link>
 
@@ -86,7 +85,9 @@ const Navbar = () => {
               styles={`md:block hidden ml-7 ${router.asPath === '/' + navTab.id ? 'font-[700]' : ''}`}
             />
           ))}
-          <AiOutlineSearch className={trailingIconClass} onClick={() => window.alert('feature coming soon!')} />
+          <Link href='/search'>
+            <AiOutlineSearch className={trailingIconClass} />
+          </Link>
           <div className='relative' onClick={() => setShowCart(prev => !prev)}>
             <AiOutlineShoppingCart className={trailingIconClass} />
             <span className='absolute top-[-4px] right-[-4px] w-4 h-4 rounded-full bg-blue-600 text-white text-[11px] text-center font-light'>
