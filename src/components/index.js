@@ -1,16 +1,25 @@
-import ProductCard from './ProductCard'
-import ProductsCarousel from './ProductsCarousel'
-import Cart from './Cart'
+// common
 import Button from './Button'
+import Cart from './Cart'
+import HeroBanner from './HeroBanner'
+
+// product
+import ProductCard from './ProductCard'
+import ProductCardBig from './ProductCardBig'
+import ProductsCarousel from './ProductsCarousel'
+
+// page loading
 import LoadingScreen from './LoadingScreen'
 import LoadingSpinner from './LoadingSpinner'
 import Error from './Error'
 
 export {
-  ProductCard,
-  ProductsCarousel,
-  Cart,
   Button,
+  Cart,
+  HeroBanner,
+  ProductCard,
+  ProductCardBig,
+  ProductsCarousel,
   LoadingScreen,
   LoadingSpinner,
   Error

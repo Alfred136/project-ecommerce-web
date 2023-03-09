@@ -1,6 +1,6 @@
 import { ProductCardBig } from "@/components"
 
-const SearchProducts = ({ products }) => {
+const FilteredProducts = ({ products }) => {
   return (
     <div className='w-full flex flex-wrap'>
       {products?.map((product) => (
@@ -19,4 +19,4 @@ const SearchProducts = ({ products }) => {
   )
 }
 
-export default SearchProducts
+export default FilteredProducts

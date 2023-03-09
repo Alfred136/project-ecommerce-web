@@ -7,7 +7,7 @@ import {
   useGetProducts,
   FilterPanel,
   MobileFilterMenu,
-  ProductCardBig,
+  FilteredProducts,
   useCategory,
   useFilteredProducts
 } from '@/features/products'
@@ -40,20 +40,7 @@ const Products = () => {
             <LoadingSpinner /> : null
           }
           {isSuccess ?
-            <div className='w-full flex flex-wrap'>
-              {filteredProducts?.map((product) => (
-                <ProductCardBig
-                  key={product._id}
-                  product={product}
-                />
-              ))}
-
-              {filteredProducts.length === 0 ?
-                <span className='w-full text-center'>
-                  No products found
-                </span> : null
-              }
-            </div> : null
+            <FilteredProducts products={filteredProducts} /> : null
           }
         </div>
       </div>

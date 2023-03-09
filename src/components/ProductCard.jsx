@@ -4,8 +4,29 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { urlFor } from '@/lib/sanityClient'
 
+const ProductCardInfo = ({ name, tags, price }) => (
+  <div className='w-full h-[80px] flex justify-between items-center px-4 py-2'>
+    <div className='flex flex-col'>
+      <span className='text-[18px] font-bold'>
+        {name}
+      </span>
+      <p className='text-[14px] text-gray-500'>
+        {tags?.map((tag, index) => (
+          <span key={`${tag}-${index}`}>
+            {tag + (index === tags.length - 1 ? '' : ', ')}
+          </span>
+        ))}
+      </p>
+    </div>
+
+    <span className='text-[18px] font-semibold'>
+      ${price}
+    </span>
+  </div>
+)
+
 const ProductCard = ({ product }) => {
-  const { slug, name, price, tags, image } = product
+  const { slug, name, price, tags, image } = product;
   const router = useRouter();
 
   return (
@@ -21,24 +42,11 @@ const ProductCard = ({ product }) => {
           height={600}
           className='w-full h-[360px] rounded-t-md border-b-0 object-cover skeleton'
         />
-        {/* Product Info */}
-        <div className='w-full h-[80px] flex justify-between items-center px-4 py-2'>
-          <div className='flex flex-col justify-center'>
-            <span className='text-[18px] font-bold'>
-              {name}
-            </span>
-            <p className='text-[14px] text-gray-500'>
-              {tags?.map((tag, index) => (
-                <span key={`${tag}-${index}`}>
-                  {tag + (index === tags.length - 1 ? '' : ', ')}
-                </span>
-              ))}
-            </p>
-          </div>
-          <h2 className='text-[18px] font-semibold'>
-            ${price}
-          </h2>
-        </div>
+        <ProductCardInfo
+          name={name}
+          tags={tags}
+          price={price}
+        />
       </div>
     </Link>
   )

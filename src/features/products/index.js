@@ -7,7 +7,7 @@ import { ProductsContext } from "./context/productsContext";
 // components
 import FilterPanel from "./components/FilterPanel";
 import MobileFilterMenu from "./components/MobileFilterMenu";
-import ProductCardBig from "./components/ProductCardBig";
+import FilteredProducts from "./components/FilteredProducts";
 
 // hooks
 import { useCategory } from "./hooks/useCategory";
@@ -19,7 +19,7 @@ export {
   ProductsContext,
   FilterPanel,
   MobileFilterMenu,
-  ProductCardBig,
+  FilteredProducts,
   useCategory,
   useFilteredProducts
 };

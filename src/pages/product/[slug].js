@@ -19,9 +19,10 @@ const ProductDetails = ({ slug }) => {
 
   return (
     <div className='flex flex-col w-full overflow-hidden'>
-      {console.log(productQuery.data)}
       <div className='flex md:flex-row flex-col justify-center w-full min-h-[60vh] mb-10'>
-        {productQuery.isLoading ? <LoadingSpinner /> : null}
+        {productQuery.isLoading ?
+          <LoadingSpinner /> : null
+        }
         {productQuery.isSuccess ?
           <>
             <ImageCarousel image={productQuery.data?.image} />
@@ -30,7 +31,9 @@ const ProductDetails = ({ slug }) => {
         }
       </div>
 
-      {featuresQuery.isLoading ? <LoadingSpinner /> : null}
+      {featuresQuery.isLoading ?
+        <LoadingSpinner /> : null
+      }
       {featuresQuery.isSuccess ?
         <ProductsCarousel
           title='Recommend for you'
