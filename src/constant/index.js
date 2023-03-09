@@ -124,19 +124,19 @@ export const footerLinks = [
     links: [
       {
         name: "Men",
-        link: "./products/men",
+        link: "/products/men",
       },
       {
         name: "Women",
-        link: "./products/women",
+        link: "/products/women",
       },
       {
-        name: "Sales",
-        link: "./products/sales",
+        name: "Sale",
+        link: "/products/sale",
       },
       {
         name: "New Arrivals",
-        link: "./products/new",
+        link: "/products/new",
       },
     ],
   },

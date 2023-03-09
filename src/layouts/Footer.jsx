@@ -7,7 +7,7 @@ const SignupForm = () => {
   const [inputEmail, setInputEmail] = useState('');
 
   const onSubmit = () => {
-    window.alert('You are subscipted!');
+    window.alert('Feature coming soon!');
     setInputEmail('');
   }
 
