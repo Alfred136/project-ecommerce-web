@@ -6,16 +6,16 @@
 * __Libs:__     &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Stripe, React-query
 * __UI:__       &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; Desktop, tablet, mobile
 
-### [Live Site](https://project-ecommerce-web.vercel.app)
+### [Live Site](https://flamingo-ecommerce.vercel.app)
 
-<img src="https://project-ecommerce-web.vercel.app/demo-home.png" alt="Home" title="Home page">
+<img src="https://flamingo-ecommerce.vercel.app/demo-home.png" alt="Home" title="Home page">
 
 #### Responsive UI
 <p float="left">
-<img src="https://project-ecommerce-web.vercel.app/demo-product.png" alt="Product-desktop" title="Product page - Desktop" height="320px">
-<img src="https://project-ecommerce-web.vercel.app/demo-product-tablet.png" alt="Product-tablet" title="Product page - Tablet" height="320px">
-<img src="https://project-ecommerce-web.vercel.app/demo-product-mobile.png" alt="Product-mobile" title="Product page - Mobile" height="320px">
-<img src="https://project-ecommerce-web.vercel.app/demo-payment.png" alt="Payment" title="Payment">
+<img src="https://flamingo-ecommerce.vercel.app/demo-product.png" alt="Product-desktop" title="Product page - Desktop" height="320px">
+<img src="https://flamingo-ecommerce.vercel.app/demo-product-tablet.png" alt="Product-tablet" title="Product page - Tablet" height="320px">
+<img src="https://flamingo-ecommerce.vercel.app/demo-product-mobile.png" alt="Product-mobile" title="Product page - Mobile" height="320px">
+<img src="https://flamingo-ecommerce.vercel.app/demo-payment.png" alt="Payment" title="Payment">
 </p>
 
 
